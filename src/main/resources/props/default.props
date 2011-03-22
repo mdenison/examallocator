@@ -1,0 +1,26 @@
+# LDAP Props                     #
+# Need ldap1 for email adresses  #
+# Need zefi for Authentication   #
+
+ldap.server.ldap1=ldaps://zefi.fh-schmalkalden.de:636
+ldap.server.zefi=ldaps://ldap1.fh-schmalkalden.de:636
+
+# The location of the sslstore file! VERY IMPORTANT!
+ldap.server.truststore=sslstore
+
+# Declaring admins. Seperated the FHS-ID with a semicolon.
+spirit.server.admins=denison;braun3
+
+# Default email adresse, if servers dont have any for a user!
+spirit.default.email=spirit@unsane.org
+
+# Wether we want to use LDAP Auth or not.
+# If set to false anyone with any username can log in. Only for
+# testing purposes.
+ldap.server.auth.use=true
+
+# section where we define default values if we wont use ldap auth
+default.email=dummy@localhost
+default.gidNumber=1001
+default.cn=hummel
+default.displayName=Harry Hummel
