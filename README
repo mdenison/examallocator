@@ -1,0 +1,40 @@
+ExamAllocator:
+* Create exams
+* Activate/Deactivate exams
+* Register to exams
+* Deregister from exams
+* Evaluate all registered students for an exam
+
+It is/will be developed with Scala 2.8.1 and Lift 2.2.
+
+http://www.scala-lang.org
+http://www.liftweb.net
+
+Hints:
+* The fhsldap_2.8.1-1.0.jar which is located in the lib/ folder 
+  is the module found at https://github.com/mdenison/FhS-LDAP-Module.
+  Of course it is possible to use the module as described in its README.
+
+* Working SBT 0.7.4 installation is needed http://code.google.com/p/simple-build-tool/.
+
+Getting Started:
+
+Clone this repository.
+run:
+$ sbt update compile ~jetty-run
+
+should give a Welcome screen at http://localhost:8080
+
+Prop file is located at src/resources/props/default.props.
+
+Switching true/false will enable/disable LDAP Support within the FhS Network.
+ldap.server.auth.use=true
+
+Switching from 1001/1002 will view the App for Students/Employees.
+default.gidNumber=1001
+
+Add your dummy user, or your FHS-ID to be an Admin.
+spirit.server.admins=denison;dummy1;dummy2
+
+Questions and/or friendly criticism are always welcomed!
+
