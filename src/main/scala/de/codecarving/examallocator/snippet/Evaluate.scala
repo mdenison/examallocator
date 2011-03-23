@@ -1,4 +1,5 @@
-package de.codecarving.examallocator.snippet
+package de.codecarving.examallocator
+package snippet
 
 import de.codecarving.examallocator.model._
 import de.codecarving.fhsldap.model.User
@@ -7,6 +8,9 @@ import net.liftweb.http.SHtml._
 import xml.Text._
 import net.liftweb.common.{Full, Loggable}
 
+/**
+ * Evaluate generates a list with all Students which will participate in an Exam.
+ */
 class Evaluate extends Loggable {
 
   def render = {

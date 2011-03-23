@@ -1,4 +1,5 @@
-package de.codecarving.examallocator.snippet
+package de.codecarving.examallocator
+package snippet
 
 import de.codecarving.examallocator.model._
 import net.liftweb.common.Full._
@@ -7,6 +8,10 @@ import net.liftweb.common.{Full, Loggable}
 import xml.Text
 import de.codecarving.fhsldap.model.User
 
+/**
+ * ChooseExam generates a list of all enabled exams.
+ * With the option for Students to register/deregister.
+ */
 class ChooseExam extends Loggable with GlobalRequests {
 
   def render = {

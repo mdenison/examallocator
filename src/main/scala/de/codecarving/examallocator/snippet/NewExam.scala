@@ -1,4 +1,5 @@
-package de.codecarving.examallocator.snippet
+package de.codecarving.examallocator
+package snippet
 
 import net.liftweb.common.Loggable
 import de.codecarving.examallocator.model._
@@ -7,6 +8,9 @@ import net.liftweb.http.{S, SHtml}
 import net.liftweb.util.BindHelpers._
 import de.codecarving.fhsldap.model.User
 
+/**
+ * NewExam renders a UI for Employees to create Exams.
+ */
 class NewExam extends Loggable {
 
   val exam = Exam.create

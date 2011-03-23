@@ -1,4 +1,5 @@
-package de.codecarving.examallocator.snippet
+package de.codecarving.examallocator
+package snippet
 
 import de.codecarving.examallocator.model._
 import net.liftweb.mapper.By
@@ -7,9 +8,13 @@ import net.liftweb.common.{Full, Empty, Loggable}
 import net.liftweb.http.{S, SHtml}
 import net.liftweb.util.BindHelpers._
 
+/**
+ * Participate renders the UI for Students to register/deregister for an Exam.
+ */
 class Participate extends Loggable with GlobalRequests {
 
   val exam = currentExamTitle.get
+
   val student: Student =
     if(Student.findAll(By(Student.fhsid,User.currentUserId.openOr(""))).filter(_.exam == exam).isEmpty) {
       val newStudent = Student.create
@@ -32,6 +37,5 @@ class Participate extends Loggable with GlobalRequests {
     "name=displayName" #> student.displayName &
     "name=examTitle" #> exam &
     "name=attends" #> (student.attends.toForm.open_! ++ SHtml.hidden(process))
-
   }
 }

@@ -1,4 +1,5 @@
-package de.codecarving.examallocator.snippet
+package de.codecarving.examallocator
+package snippet
 
 import net.liftweb.common.Loggable
 import de.codecarving.examallocator.model._
@@ -7,6 +8,9 @@ import net.liftweb.http.{S, SHtml}
 import net.liftweb.util.BindHelpers._
 import de.codecarving.fhsldap.model.User
 
+/**
+ * EditExam allows the Employee to disable/enable registration for an Exam.
+ */
 class EditExam extends Loggable with GlobalRequests {
 
   val exam = currentExam.open_!

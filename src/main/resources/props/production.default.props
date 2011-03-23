@@ -17,7 +17,7 @@ spirit.default.email=spirit@unsane.org
 # Wether we want to use LDAP Auth or not.
 # If set to false anyone with any username can log in. Only for
 # testing purposes.
-ldap.server.auth.use=false
+ldap.server.auth.use=true
 
 # section where we define default values if we wont use ldap auth
 default.email=dummy@localhost
