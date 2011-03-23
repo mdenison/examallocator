@@ -13,6 +13,7 @@ class Evaluate extends Loggable {
 
     Exam.findAll(By(Exam.user,User.currentUserId.open_!)).flatMap {
       exam =>
+      var counter = 0
       <table style="border:1">
 			<thead>
 				<tr>
@@ -21,11 +22,14 @@ class Evaluate extends Loggable {
 			</thead>
 			<tbody>
 				<tr>
-					<td>Angemeldete Studenten: </td>
+          <td>Anzahl: { Student.findAll(By(Student.exam,exam.title)).filter(_.attends == true).size }</td>
+          <td>Angemeldete Studenten: </td>
 				</tr>
         { Student.findAll(By(Student.exam,exam.title)).filter(_.attends == true).flatMap {
         student =>
+          counter += 1
           <tr>
+            <td>Nr. {counter}</td>
             <td>{student.fhsid + " : " + student.displayName}</td>
           </tr>
         }}
