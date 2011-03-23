@@ -35,21 +35,21 @@ class Boot {
     }
 
     lazy val loggedInEmployeeorAdmin = If(() => User.isEmployee || User.isAdmin,
-                                   () => RedirectResponse("/user_mgt/login"))
+                                   () => RedirectResponse("/index"))
 
     lazy val loggedInEmployee = If(() => User.isEmployee,
-                            () => RedirectResponse("/user_mgt/login"))
+                            () => RedirectResponse("/index"))
 
     lazy val loggedInStudent = If(() => User.isStudent,
-                           () => RedirectResponse("/user_mgt/login"))
+                           () => RedirectResponse("/index"))
 
     lazy val loggedInAdmin = If(() => User.isAdmin,
-                         () => RedirectResponse("/user_mgt/login"))
+                         () => RedirectResponse("/index"))
 
     lazy val loggedInStudentorAdmin = If(() => User.isEmployee || User.isAdmin,
-                                   () => RedirectResponse("/user_mgt/login"))
+                                   () => RedirectResponse("/index"))
 
-    lazy val loggedIn = If(() => User.loggedIn_?, () => RedirectResponse("/user_mgt/login"))
+    lazy val loggedIn = If(() => User.loggedIn_?, () => RedirectResponse("/index"))
 
 
     val sitemap = List(
